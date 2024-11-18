@@ -1,19 +1,23 @@
-public abstract class HealthProfessional {
-    private String name;
-    private String specialty;
+public class HealthProfessional {
+    int ID;
+    String name;
+    String email; // 用于区分不同类型的健康专业人士
 
-    public HealthProfessional(String name, String specialty) {
+    // 默认构造函数
+    public HealthProfessional() {
+    }
+
+    // 带参数的构造函数
+    public HealthProfessional(int ID, String name, String email) {
+        this.ID = ID;
         this.name = name;
-        this.specialty = specialty;
+        this.email = email;
     }
 
-    public String getName() {
-        return name;
+    // 打印健康专业人士详细信息的方法
+    public void printMessage() {
+        System.out.println("Doctor ID:"+ ID);
+        System.out.println("Doctor Name:"+ name);
+        System.out.println("Doctor Email:"+ email);
     }
-
-    public String getSpecialty() {
-        return specialty;
-    }
-
-    public abstract void seePatient(String patientName);
 }
