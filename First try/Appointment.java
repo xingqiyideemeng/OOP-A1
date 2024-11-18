@@ -1,34 +1,27 @@
-import java.time.LocalTime;
-
 public class Appointment {
-    HealthProfessional healthProfessional;
-    String patientName;
-    LocalTime appointmentTime;
+    String Name;
+    String phoneNumber;
+    String time;
+    String disease;
+    String Doctor;
 
-    public Appointment(HealthProfessional healthProfessional, String patientName, LocalTime appointmentTime) {
-        this.healthProfessional = healthProfessional;
-        this.patientName = patientName;
-        this.appointmentTime = appointmentTime;
+
+    public Appointment() {
+    }
+    public Appointment( String Name,String phoneNumber,String time,String disease,String Doctor){
+        this.Name = Name;
+        this.phoneNumber = phoneNumber;
+        this.time = time;
+        this.disease =disease;
+        this.Doctor = Doctor;
     }
 
-    public HealthProfessional getHealthProfessional() {
-        return healthProfessional;
+    public void printAppointment() {
+      System.out.println("Patient Name: "+ Name);
+      System.out.println("Patient Phone Number: "+ phoneNumber);
+      System.out.println("Patient Appointment Time: "+ time);
+      System.out.println("Patient Disease: "+disease );
+      System.out.println("Patient Doctor: "+Doctor);
     }
 
-    public String getPatientName() {
-        return patientName;
-    }
-
-    public LocalTime getAppointmentTime() {
-        return appointmentTime;
-    }
-
-    @Override
-    public String toString() {
-        return "Appointment{" +
-                "healthProfessional=" + healthProfessional.getName() +
-                ", patientName='" + patientName + '\'' +
-                ", appointmentTime=" + appointmentTime +
-                '}';
-    }
 }
