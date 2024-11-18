@@ -1,11 +1,21 @@
 public class Specialist extends HealthProfessional {
+    String age;
 
-    public Specialist(String name, String specialty) {
-        super(name, specialty);
+
+    public Specialist() {
+    }
+
+
+    public Specialist(int ID,String name, String email, String age){
+        this.ID= ID;
+        this.name = name;
+        this.email = email;
+        this.age = age;
     }
 
     @Override
-    public void seePatient(String patientName) {
-        System.out.println(name + " (Specialty: " + getSpecialty() + ") is seeing patient: " + patientName);
+    public void printMessage() {
+        super.printMessage();
+        System.out.println("Doctor Age: "+age);
     }
 }
